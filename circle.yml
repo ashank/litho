@@ -10,10 +10,7 @@ machine:
 
 dependencies:
   pre:
-    - |
-      if [[ -n "$KEY" ]]; then
-        openssl aes-256-cbc -d -in scripts/setup-keys.enc -k $KEY >> gradle.properties";
-      fi
+    - "[ -n \"$KEY\" ] && openssl aes-256-cbc -d -in scripts/setup-keys.enc -k $KEY >> gradle.properties || true"
     # Manually override key to limit exposure
     - export KEY="<unset>"
   override:
