@@ -25,6 +25,7 @@ dependencies:
   cache_directories:
     - "/home/ubuntu/buck"
     - "/home/ubuntu/android-sdk"
+    - "/home/ubuntu/dl_cache"
 
 test:
   override:
